@@ -1,4 +1,4 @@
-const API_BASE_URL = "/api/hashback";
+const API_BASE_URL = "https://api.hashback.co.ke";
 
 // User credentials - in production, these should come from environment variables or user settings
 const API_KEY = "h266076iIenPh";
