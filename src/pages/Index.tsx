@@ -73,11 +73,7 @@ const Index = () => {
   const premiumSurveys = surveys.filter((s) => s.is_premium);
 
   const handleWithdrawClick = () => {
-    if (!profile?.is_active && balance >= 2500) {
-      setShowActivate(true);
-    } else {
-      setShowWithdraw(true);
-    }
+    setShowWithdraw(true);
   };
 
   const handleWithdraw = async (amount: number, phone: string) => {
@@ -149,11 +145,7 @@ const Index = () => {
           <Download size={16} /> Withdraw to M-Pesa
         </motion.button>
 
-        {!profile?.is_active && balance >= 2500 && (
-          <p className="text-xs text-amber-600 mt-2 text-center">
-            Account activation required for withdrawals
-          </p>
-        )}
+        {/* Activation warning removed - now handled in withdrawal flow */}
       </div>
 
       {/* Quick Stats */}
