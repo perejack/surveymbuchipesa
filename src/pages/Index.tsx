@@ -244,10 +244,6 @@ const Index = () => {
         onClose={() => setShowWithdraw(false)}
         balance={balance}
         onWithdraw={handleWithdraw}
-        onUpgrade={() => {
-          setShowWithdraw(false);
-          navigate("/wallet?tab=upgrade");
-        }}
       />
 
       <ActivateAccountModal

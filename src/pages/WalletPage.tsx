@@ -56,11 +56,7 @@ const WalletPage = () => {
   }
 
   const handleWithdrawClick = () => {
-    if (!profile?.is_active && balance >= 2500) {
-      setShowActivate(true);
-    } else {
-      setShowWithdraw(true);
-    }
+    setShowWithdraw(true);
   };
 
   const handleWithdraw = async (amount: number, phone: string) => {
@@ -146,11 +142,7 @@ const WalletPage = () => {
           </motion.button>
         </div>
 
-        {!profile?.is_active && balance >= 2500 && (
-          <p className="text-xs text-amber-600 mt-2 text-center">
-            Account activation required for withdrawals
-          </p>
-        )}
+      {/* Remove activation banner */}
       </div>
 
       {/* Tabs */}
@@ -232,10 +224,6 @@ const WalletPage = () => {
         onClose={() => setShowWithdraw(false)}
         balance={balance}
         onWithdraw={handleWithdraw}
-        onUpgrade={() => {
-          setShowWithdraw(false);
-          setTab("upgrade");
-        }}
       />
 
       <ActivateAccountModal
